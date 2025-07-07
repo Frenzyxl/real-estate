@@ -41,6 +41,15 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: #2563eb;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
 }
 
 .nav {
@@ -237,59 +246,30 @@ body {
     padding: 4rem 0;
 }
 
-.details .container {
-    max-width: none;
-    padding: 0 40px;
-}
-
 .details-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
     align-items: start;
 }
 
-/* About Section */
-.about-section {
-    margin-bottom: 4rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.about-section h2 {
+.details-content h2 {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #1e293b;
 }
 
-.about-section p {
+.details-content p {
     font-size: 1.1rem;
     color: #64748b;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     line-height: 1.8;
+    padding-bottom: 1rem;
 }
 
-/* Features Section */
-.features-section {
-    margin-bottom: 4rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.features-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #1e293b;
-}
-
-/* Property Details Section */
-.property-details-section {
-    margin-bottom: 2rem;
-}
-
-.property-details-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+.details-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
     color: #1e293b;
 }
 
@@ -558,7 +538,6 @@ body {
     
     .details-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
     }
     
     .overview-grid {
