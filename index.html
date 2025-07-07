@@ -1,204 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beautiful Family Home - 123 Oak Street</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="logo">RealEstate Pro</h1>
-                <nav class="nav">
-                    <a href="#overview">Overview</a>
-                    <a href="#details">Details</a>
-                </nav>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <h1 class="logo">RealEstate Pro</h1>
+          <nav class="nav">
+            <a href="#overview">Overview</a>
+            <a href="#details">Details</a>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- Hero Section with Image Slider -->
     <section class="hero">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide active">
-                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="House Front View">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Living Room">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kitchen">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1560448075-bb485b067938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Master Bedroom">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Backyard">
-                </div>
-            </div>
-            <button class="slider-btn prev" onclick="changeSlide(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-btn next" onclick="changeSlide(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="slider-dots">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-            </div>
+      <div class="slider-container">
+        <div class="slider" id="imageSlider">
+          <!-- Images will be dynamically loaded here -->
         </div>
-        
-        <div class="hero-content">
-            <div class="container">
-                <div class="price-badge">
-                    <span class="price">$750,000</span>
-                </div>
-                <h2 class="address">123 Oak Street, Suburban Heights</h2>
-                <p class="subtitle">Beautiful 4-bedroom family home in a quiet neighborhood</p>
-            </div>
+        <button class="slider-btn prev" onclick="changeSlide(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next" onclick="changeSlide(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slider-dots" id="sliderDots">
+          <!-- Dots will be dynamically generated here -->
         </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="container">
+          <div class="price-badge">
+            <span class="price">$510,000</span>
+          </div>
+          <h2 class="address">32 Princess Dr Rochester, NY 14623</h2>
+          <p class="subtitle">
+            Beautiful 4-bedroom family home in a quiet neighborhood
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Overview Section -->
     <section id="overview" class="overview">
-        <div class="container">
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <i class="fas fa-bed"></i>
-                    <h3>4</h3>
-                    <p>Bedrooms</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-bath"></i>
-                    <h3>3</h3>
-                    <p>Bathrooms</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-ruler-combined"></i>
-                    <h3>2,450</h3>
-                    <p>Square Feet</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-car"></i>
-                    <h3>2</h3>
-                    <p>Garage</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-card">
+            <i class="fas fa-bed"></i>
+            <h3>4</h3>
+            <p>Bedrooms</p>
+          </div>
+          <div class="overview-card">
+            <i class="fas fa-bath"></i>
+            <h3>1.5</h3>
+            <p>Bathrooms</p>
+          </div>
+          <div class="overview-card">
+            <i class="fas fa-ruler-combined"></i>
+            <h3>1,620</h3>
+            <p>Square Feet</p>
+          </div>
+          <div class="overview-card">
+            <i class="fas fa-car"></i>
+            <h3>1</h3>
+            <p>Garage</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Details Section -->
     <section id="details" class="details">
-        <div class="container">
-            <div class="details-grid">
-                <div class="details-content">
-                    <h2>About This Home</h2>
-                    <p>Welcome to this stunning 4-bedroom, 3-bathroom family home located in the desirable Suburban Heights neighborhood. This beautifully maintained property offers the perfect blend of comfort, style, and functionality.</p>
-                    
-                    <h3>Key Features</h3>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Open concept living area with vaulted ceilings</li>
-                        <li><i class="fas fa-check"></i> Gourmet kitchen with granite countertops and stainless steel appliances</li>
-                        <li><i class="fas fa-check"></i> Master suite with walk-in closet and en-suite bathroom</li>
-                        <li><i class="fas fa-check"></i> Hardwood floors throughout main living areas</li>
-                        <li><i class="fas fa-check"></i> Large backyard with mature landscaping</li>
-                        <li><i class="fas fa-check"></i> Two-car attached garage</li>
-                        <li><i class="fas fa-check"></i> Central air conditioning and heating</li>
-                        <li><i class="fas fa-check"></i> Excellent school district</li>
-                    </ul>
+      <div class="container">
+        <div class="details-grid">
+          <div class="details-content">
+            <h2>About This Home</h2>
+            <p>
+              Welcome to 32 Princess Drive—an inviting ranch-style home offering
+              comfort, space, and peace of mind with numerous updates already
+              completed. Situated on a generous .34-acre lot, this home features
+              4 bedrooms, 1.5 bathrooms, and 1,620 square feet of
+              well-maintained living space.
+            </p>
+            
+            <p>
+              Step inside to find a thoughtful
+              layout that balances everyday functionality with charm. The fully
+              remodeled main bath (2023), updated half bath (2021), and new
+              carpets throughout (2025) provide modern touches, while vinyl
+              windows, new gutters (2023), vinyl siding (2023), and a new
+              driveway (2023), give the exterior a crisp, clean look.
+            </p>
+            
+            <p>
+              Enjoy year-round comfort with central air, a furnace installed in 2005, and a newer roof - completed in 2020.
+            </p>
+            
+            <p>
+              This home is a great opportunity for a first-time buyer or investor looking for a well-maintained property in a desirable neighborhood.
+            </p>
 
-                    <h3>Property Details</h3>
-                    <div class="property-details">
-                        <div class="detail-item">
-                            <span class="label">Year Built:</span>
-                            <span class="value">2018</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Lot Size:</span>
-                            <span class="value">0.25 acres</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Property Type:</span>
-                            <span class="value">Single Family Home</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Style:</span>
-                            <span class="value">Contemporary</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Roof:</span>
-                            <span class="value">Asphalt Shingle</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Foundation:</span>
-                            <span class="value">Concrete Slab</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="details-sidebar">
-                    <div class="contact-card">
-                        <h3>Interested in this property?</h3>
-                        <p>Contact us today to schedule a viewing or get more information.</p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>(555) 123-4567</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>info@realestatepro.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>123 Oak Street, Suburban Heights</span>
-                            </div>
-                        </div>
-                        <button class="btn-primary">Schedule Viewing</button>
-                    </div>
-                </div>
+            <h3>Key Features</h3>
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> Primary Bedrom Suite</li>
+              <li><i class="fas fa-check"></i> 1 Fireplace</li>
+              <li><i class="fas fa-check"></i> Eat-In Kitchen</li>
+              <li>
+                <i class="fas fa-check"></i> David B. Crane Elementary School
+                Rated A-
+              </li>
+              <li><i class="fas fa-check"></i> Separate Formal Living Room</li>
+              <li><i class="fas fa-check"></i> 1 Car Attached Garage</li>
+              <li><i class="fas fa-check"></i> Laundry Room</li>
+            </ul>
+
+            <h3>Property Details</h3>
+            <div class="property-details">
+              <div class="detail-item">
+                <span class="label">Year Built:</span>
+                <span class="value">1959</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Lot Size:</span>
+                <span class="value">0.34 Acres</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Property Type:</span>
+                <span class="value">Single Family Home</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Style:</span>
+                <span class="value">Contemporary</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Roof:</span>
+                <span class="value">Asphalt Shingle</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Foundation:</span>
+                <span class="value">Concrete Slab</span>
+              </div>
             </div>
+          </div>
+
+          <div class="details-sidebar">
+            <div class="contact-card">
+              <h3>Interested in this property?</h3>
+              <p>
+                Contact us today to schedule a viewing or get more information.
+              </p>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <span>(555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <span>info@realestatepro.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Oak Street, Suburban Heights</span>
+                </div>
+              </div>
+              <button class="btn-primary">Schedule Viewing</button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>RealEstate Pro</h3>
-                    <p>Your trusted partner in finding the perfect home.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#overview">Overview</a></li>
-                        <li><a href="#details">Details</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Phone: (555) 123-4567</p>
-                    <p>Email: info@realestatepro.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 RealEstate Pro. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>RealEstate Pro</h3>
+            <p>Your trusted partner in finding the perfect home.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#details">Details</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@realestatepro.com</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 RealEstate Pro. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html> 
+  </body>
+</html>
