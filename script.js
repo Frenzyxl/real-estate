@@ -2,6 +2,7 @@
 let currentSlide = 0;
 let slides = [];
 let dots = [];
+let modalCurrentSlide = 0;
 
 // List of images in the images folder
 const imageFiles = [
@@ -33,8 +34,9 @@ const imageFiles = [
 function createSlider() {
     const sliderContainer = document.getElementById('imageSlider');
     const dotsContainer = document.getElementById('sliderDots');
+    const sliderParentContainer = document.querySelector('.slider-container');
     
-    if (!sliderContainer || !dotsContainer) {
+    if (!sliderContainer || !dotsContainer || !sliderParentContainer) {
         console.error('Slider containers not found!');
         return;
     }
@@ -43,39 +45,39 @@ function createSlider() {
     sliderContainer.innerHTML = '';
     dotsContainer.innerHTML = '';
     
+    // Remove any existing view gallery button
+    const existingButton = sliderParentContainer.querySelector('.view-gallery-btn');
+    if (existingButton) {
+        existingButton.remove();
+    }
     
-    // Create slides
-    imageFiles.forEach((imageFile, index) => {
-        // Create slide div
-        const slideDiv = document.createElement('div');
-        slideDiv.className = 'slide';
-        if (index === 0) slideDiv.classList.add('active');
-        
-        // Create image element
-        const img = document.createElement('img');
-        img.src = `images/${imageFile}`;
-        img.alt = `Property Image ${index + 1}`;
-        img.loading = 'lazy';
-        
-        // Add error handling for images
-        img.onerror = function() {
-            console.error('Failed to load image:', imageFile);
-            this.style.display = 'none';
-            this.parentElement.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #666;">Image not found</div>';
-        };
-        
-      
-        
-        slideDiv.appendChild(img);
-        sliderContainer.appendChild(slideDiv);
-        
-        // Create dot
-        const dot = document.createElement('span');
-        dot.className = 'dot';
-        if (index === 0) dot.classList.add('active');
-        dot.onclick = () => goToSlide(index + 1);
-        dotsContainer.appendChild(dot);
-    });
+    // Create only the first slide
+    const slideDiv = document.createElement('div');
+    slideDiv.className = 'slide active';
+    
+    // Create image element
+    const img = document.createElement('img');
+    img.src = `images/${imageFiles[0]}`;
+    img.alt = 'Property Image';
+    img.loading = 'lazy';
+    
+    // Add error handling for images
+    img.onerror = function() {
+        console.error('Failed to load image:', imageFiles[0]);
+        this.style.display = 'none';
+        this.parentElement.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #666;">Image not found</div>';
+    };
+    
+    slideDiv.appendChild(img);
+    sliderContainer.appendChild(slideDiv);
+    
+    // Create View Gallery button
+    const viewGalleryBtn = document.createElement('button');
+    viewGalleryBtn.className = 'view-gallery-btn';
+    viewGalleryBtn.innerHTML = '<i class="fas fa-images"></i> View Gallery';
+    viewGalleryBtn.addEventListener('click', () => openModal(0));
+    
+    sliderParentContainer.appendChild(viewGalleryBtn);
     
     // Update references
     slides = document.querySelectorAll('.slide');
@@ -86,11 +88,6 @@ function createSlider() {
 // Initialize slider
 function initSlider() {
     createSlider();
-    showSlide(currentSlide);
-    // Auto-advance slides every 5 seconds
-    setInterval(() => {
-        changeSlide(1);
-    }, 5000);
 }
 
 // Show specific slide
@@ -245,4 +242,43 @@ function preloadImages() {
 }
 
 // Initialize preloading
-preloadImages(); 
+preloadImages();
+
+// Modal Functions
+function openModal(slideIndex) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const currentNumber = document.getElementById('currentImageNumber');
+    const totalImages = document.getElementById('totalImages');
+    
+    modalCurrentSlide = slideIndex;
+    modalImg.src = `images/${imageFiles[slideIndex]}`;
+    currentNumber.textContent = slideIndex + 1;
+    totalImages.textContent = imageFiles.length;
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function changeModalSlide(direction) {
+    modalCurrentSlide += direction;
+    
+    if (modalCurrentSlide >= imageFiles.length) {
+        modalCurrentSlide = 0;
+    }
+    if (modalCurrentSlide < 0) {
+        modalCurrentSlide = imageFiles.length - 1;
+    }
+    
+    const modalImg = document.getElementById('modalImage');
+    const currentNumber = document.getElementById('currentImageNumber');
+    
+    modalImg.src = `images/${imageFiles[modalCurrentSlide]}`;
+    currentNumber.textContent = modalCurrentSlide + 1;
+} 

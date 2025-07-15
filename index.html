@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beautiful Family Home - 32 Princess Dr </title>
-    <link rel="icon" type="image/jpeg" href="real_estate_logo.jpg">
-    <link rel="apple-touch-icon" href="real_estate_logo.jpg">
+    <title>Beautiful Family Home - 454 35th Ave NE</title>
+    <link rel="icon" type="image/jpeg" href="real_estate_logo.jpg" />
+    <link rel="apple-touch-icon" href="real_estate_logo.jpg" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -22,7 +22,11 @@
       <div class="container">
         <div class="header-content">
           <h1 class="logo">
-            <img src="real_estate_logo.jpg" alt="RealEstate Pro Logo" class="logo-image">
+            <img
+              src="real_estate_logo.jpg"
+              alt="RealEstate Pro Logo"
+              class="logo-image"
+            />
             RealEstate Pro
           </h1>
           <nav class="nav">
@@ -39,12 +43,6 @@
         <div class="slider" id="imageSlider">
           <!-- Images will be dynamically loaded here -->
         </div>
-        <button class="slider-btn prev" onclick="changeSlide(-1)">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="slider-btn next" onclick="changeSlide(1)">
-          <i class="fas fa-chevron-right"></i>
-        </button>
         <div class="slider-dots" id="sliderDots">
           <!-- Dots will be dynamically generated here -->
         </div>
@@ -55,13 +53,38 @@
           <div class="price-badge">
             <span class="price">$510,000</span>
           </div>
-          <h2 class="address">32 Princess Dr Rochester, NY 14623</h2>
+          <div class="down-payment-badge">
+            <span class="down-payment-text">10% Down Payment</span>
+          </div>
+          <h2 class="address">454 35th Ave NE</h2>
+          <p class="subtitle address-secondary">Saint Petersburg, FL 33704</p>
+          <p class="subtitle address-secondary">Northeast Park Neighborhood</p>
           <p class="subtitle">
-            Beautiful 4-bedroom family home in a quiet neighborhood
+            Beautiful 3-bedroom family home in a quiet neighborhood
           </p>
         </div>
       </div>
     </section>
+
+    <!-- Full Screen Image Modal -->
+    <div id="imageModal" class="image-modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Property Image" />
+        <div class="modal-nav">
+          <button class="modal-btn prev" onclick="changeModalSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="modal-btn next" onclick="changeModalSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="image-counter">
+          <span id="currentImageNumber">1</span> /
+          <span id="totalImages">20</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Overview Section -->
     <section id="overview" class="overview">
@@ -69,17 +92,17 @@
         <div class="overview-grid">
           <div class="overview-card">
             <i class="fas fa-bed"></i>
-            <h3>4</h3>
+            <h3>3</h3>
             <p>Bedrooms</p>
           </div>
           <div class="overview-card">
             <i class="fas fa-bath"></i>
-            <h3>1.5</h3>
+            <h3>2</h3>
             <p>Bathrooms</p>
           </div>
           <div class="overview-card">
             <i class="fas fa-ruler-combined"></i>
-            <h3>1,620</h3>
+            <h3>1,303</h3>
             <p>Square Feet</p>
           </div>
           <div class="overview-card">
@@ -98,53 +121,57 @@
           <div class="details-content">
             <h2>About This Home</h2>
             <p>
-              Welcome to 32 Princess Drive—an inviting ranch-style home offering
-              comfort, space, and peace of mind with numerous updates already
-              completed. Situated on a generous .34-acre lot, this home features
-              4 bedrooms, 1.5 bathrooms, and 1,620 square feet of
-              well-maintained living space.
+              Live the resort lifestyle in this stunning, high-end renovated
+              POOL home located in the highly sought-after Crisp Park / Coffee
+              Pot Bayou neighborhood of Northeast St. Petersburg! HIGH CEILING
+              (9FT) AND OPEN FLOOR PLAN! Situated on a spacious CORNER LOT,
+              paved circular driveway, Durable Metal Roof! AC (2023), Water
+              Heater (2023), Double pane Windows. Clean 4 Point Inspection
+              (Attached). This beautifully landscaped property features tropical
+              bamboo and palm trees, maintained with a well-fed irrigation
+              system.
             </p>
-            
+
             <p>
-              Step inside to find a thoughtful
-              layout that balances everyday functionality with charm. The fully
-              remodeled main bath (2023), updated half bath (2021), and new
-              carpets throughout (2025) provide modern touches, while vinyl
-              windows, new gutters (2023), vinyl siding (2023), and a new
-              driveway (2023), give the exterior a crisp, clean look.
+              Step into your private backyard oasis complete with a luxurious
+              Salt System and HEATED pool and spa, surrounded by a pavered deck.
+              Perfect for entertaining or relaxing in style. Inside, you'll find
+              designer-level finishes typically seen in million-dollar homes,
+              with meticulous attention to detail throughout. This home truly
+              checks all the boxes! Enjoy being just steps from scenic Crisp
+              Park, which offers waterfront access, public boat ramps, and
+              shaded picnic areas.
             </p>
-            
+
             <p>
-              Enjoy year-round comfort with central air, a furnace installed in 2005, and a newer roof - completed in 2020.
-            </p>
-            
-            <p>
-              This home is a great opportunity for a first-time buyer or investor looking for a well-maintained property in a desirable neighborhood.
+              You're also a stone throw away to the brand-new Whole Foods, two
+              Publix locations, Fresh Market, and Trader Joe's. Plus, everything
+              along the vibrant 4th Street corridor is right at your fingertips,
+              including dining, shopping, and entertainment. The Vinoy Golf Club
+              is just around the corner!
             </p>
 
             <h3>Key Features</h3>
             <ul class="features-list">
-              <li><i class="fas fa-check"></i> Primary Bedrom Suite</li>
-              <li><i class="fas fa-check"></i> 1 Fireplace</li>
-              <li><i class="fas fa-check"></i> Eat-In Kitchen</li>
+              <li><i class="fas fa-check"></i> Heated Indoor Pool</li>
+              <li><i class="fas fa-check"></i> Deck</li>
+              <li><i class="fas fa-check"></i> Garden View</li>
               <li>
-                <i class="fas fa-check"></i> David B. Crane Elementary School
-                Rated A-
+                <i class="fas fa-check"></i> St. Petersburg High School Rated A
               </li>
-              <li><i class="fas fa-check"></i> Separate Formal Living Room</li>
-              <li><i class="fas fa-check"></i> 1 Car Attached Garage</li>
-              <li><i class="fas fa-check"></i> Laundry Room</li>
+              <li><i class="fas fa-check"></i> Contemporary Architecture</li>
+              <li><i class="fas fa-check"></i> 3-minute walk to Crisp Park</li>
             </ul>
 
             <h3>Property Details</h3>
             <div class="property-details">
               <div class="detail-item">
                 <span class="label">Year Built:</span>
-                <span class="value">1959</span>
+                <span class="value">1952</span>
               </div>
               <div class="detail-item">
                 <span class="label">Lot Size:</span>
-                <span class="value">0.34 Acres</span>
+                <span class="value">8,616 Sq Ft Lot</span>
               </div>
               <div class="detail-item">
                 <span class="label">Property Type:</span>
@@ -156,7 +183,7 @@
               </div>
               <div class="detail-item">
                 <span class="label">Roof:</span>
-                <span class="value">Asphalt Shingle</span>
+                <span class="value">Metal</span>
               </div>
               <div class="detail-item">
                 <span class="label">Foundation:</span>
@@ -174,18 +201,14 @@
               <div class="contact-info">
                 <div class="contact-item">
                   <i class="fas fa-phone"></i>
-                  <span>(555) 123-4567</span>
-                </div>
-                <div class="contact-item">
-                  <i class="fas fa-envelope"></i>
-                  <span>info@realestatepro.com</span>
+                  <span>+1 (513) 716‑8608</span>
                 </div>
                 <div class="contact-item">
                   <i class="fas fa-map-marker-alt"></i>
-                  <span>32 Princess Dr, Rochester, NY 14623</span>
+                  <span>454 35th Ave NE</span>
                 </div>
               </div>
-              <button class="btn-primary">Schedule Viewing</button>
+              <!-- <button class="btn-primary">Schedule Viewing</button> -->
             </div>
           </div>
         </div>
@@ -209,8 +232,7 @@
           </div>
           <div class="footer-section">
             <h4>Contact</h4>
-            <p>Phone: (555) 123-4567</p>
-            <p>Email: info@realestatepro.com</p>
+            <p>Phone: +1 (513) 716‑8608</p>
           </div>
         </div>
         <div class="footer-bottom">
